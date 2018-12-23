@@ -8,27 +8,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import lombok.extern.slf4j.Slf4j;
-
 @Repository
 public class LoginDAO {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	// 로그인
+	// 로그
 	public boolean idConfirm(Map<String, Object> params) {
-		String query = "SELECT * FROM login2 WHERE id='" + params.get("userId") + "'AND password='" + params.get("userPassword") + "'";
+		String query = "SELECT * FROM user WHERE id='" + params.get("userId") + "'AND password='" + params.get("userPassword") + "'";
 		System.out.println(query);
 		if(jdbcTemplate.queryForList(query).isEmpty()) {
-			return true;
+			System.out.println(jdbcTemplate.queryForList(query));
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 	// 회원가입
 	public int insertUser(HttpServletRequest request) {
-		String query = "INSERT INTO login2 (id, password, name, code) VALUES (?, ?, ?, ?)";
+		String query = "INSERT INTO user (id, password, name, code) VALUES (?, ?, ?, ?)";
 		return jdbcTemplate.update(query, request.getParameter("id"), request.getParameter("password"),
 				request.getParameter("name"), request.getParameter("code"));
 	}
