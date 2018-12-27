@@ -28,6 +28,16 @@ public class LoginController {
 		return "main";
 	}
 
+	@RequestMapping("/login")
+	public String loginPage() {
+		return "login";
+	}
+	
+	@RequestMapping("/signup")
+	public String signupPage() {
+		return "signup";
+	}
+	
 	@RequestMapping(value = "/session", method = RequestMethod.POST)
 	@ResponseBody
 	public Map<String, Object> sessionCheck(HttpSession session) {
@@ -39,7 +49,7 @@ public class LoginController {
 		return sessionResult;
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/userLogin", method = RequestMethod.POST)
 	@ResponseBody
 	public Map<String, Object> login(@RequestBody Map<String, Object> params, HttpSession session) {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -59,11 +69,6 @@ public class LoginController {
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:/";
-	}
-
-	@RequestMapping("/signup")
-	public String signupPage() {
-		return "signup";
 	}
 
 	@RequestMapping("/success")
