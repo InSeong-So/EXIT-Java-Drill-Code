@@ -14,44 +14,44 @@ project
     ├───main
     │   ├───java
     │   │   └───login
-    │   │		│	LoginApplication.java
-    │   │		│
+    │   │       │  LoginApplication.java
+    │   │       │
     │   │       └───┬───controller
-    │   │           │	  LoginController.java
-    │   │           │	  RestControllerEx.java   
+    │   │           │     LoginController.java
+    │   │           │     RestControllerEx.java   
     │   │           │
     │   │           ├───domain
-    │   │           │	  UserTable.java 
+    │   │           │     UserTable.java 
     │   │           │
     │   │           ├───repository
-    │   │           │	  LoginRepository.java 
+    │   │           │     LoginRepository.java 
     │   │           │
     │   │           ├───service
-    │   │           │	  LoginService.java
-    │   │           │	  LoginServiceImplements.java  
+    │   │           │     LoginService.java
+    │   │           │     LoginServiceImplements.java  
     │   │           │
     │   │           └───util
-    │   │		    LoginFunction.java
-    │   │			LoginRegistration.java
+    │   │                 LoginFunction.java
+    │   │                 LoginRegistration.java
     │   │
     │   ├───resources
-    │   │   │	application.properties
-    │	│	│
-    │	│	└───static
-    │	│		│
-    │	│		└───┬───css
-    │	│			│	  main.css
-    │	│			│
-    │	│			└───js
-    │	│				  password.js
-    │	│
-    │	└───webapp
-    │   	└───WEB-INF
-    │   		└───views
-    │				codePage.html
-    │				home.html
-    │				home2.html
-    │				passwordForm.html
+    │   │   │   application.properties
+    │   │   │
+    │   │   └───static
+    │   │       │
+    │   │       └───┬───css
+    │   │           │     main.css
+    │   │           │
+    │   │           └───js
+    │   │                 password.js
+    │   │
+    │   └───webapp
+    │       └───WEB-INF
+    │           └───views
+    │               codePage.html
+    │               home.html
+    │               home2.html
+    │               passwordForm.html
     │
     └───test
         └───java
