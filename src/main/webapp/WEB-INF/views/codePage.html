@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+	<h1>회원 가입에 성공하셨습니다.</h1>
+
+	<form style="display: block" action="/success" method="post">
+		<input type="text" style="display: none" id="userId" value="">
+		<input type="text" style="display: none" id="userCode" value="">
+		<input type="submit" value="코드 발급">
+	</form>
+
+	<a href="passwordForm.html">돌아가기</a>
+</body>
+<script type="text/javascript">
+	$(document).ready(function() {
+		makeid();
+		console.log("클릭");
+		$("#codeBlock").on("submit", function() {
+			document.getElementById("codeView").style.display = "block";
+		});
+	});
+
+	function getCode(userId) {
+		$.ajax({
+			url : "/success",
+			data : {
+
+			},
+			success : function(data) {
+				$("#userCode").value = data
+			}
+		});
+	}
+
+	function makeid() {
+		var text = "";
+		var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+		for (var i = 0; i < 10; i++) {
+			text += possible
+					.charAt(Math.floor(Math.random() * possible.length));
+		}
+
+		document.getElementById("userCode").value = text;
+	}
+</script>
+</html>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: db2db
+Implementation-Version: 1
+Built-By: SIS
+Implementation-Vendor-Id: sis.toyproject
+Build-Jdk: 1.8.0_191
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/db2db
+Created-By: Maven Integration for Eclipse
+

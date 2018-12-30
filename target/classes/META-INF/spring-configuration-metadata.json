@@ -1,0 +1,18 @@
+{
+  "groups": [
+    {
+      "name": "spring.startdb.datasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "db2db.config.StartDbSource",
+      "sourceMethod": "public javax.sql.DataSource dataSource() "
+    },
+    {
+      "name": "spring.targetdb.datasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "db2db.config.TargetDbSource",
+      "sourceMethod": "public javax.sql.DataSource dataSource() "
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
